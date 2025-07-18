@@ -1,0 +1,45 @@
+﻿<Page x:Class="StudentPortal.NewCourse"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StudentPortal"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NewCourse">
+    <Grid Margin="10">
+        <materialDesign:Card Padding="10" UniformCornerRadius="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Labels and Inputs -->
+                <TextBlock Text="Название:" Grid.Row="0" Grid.Column="0" Margin="0,0,10,5" VerticalAlignment="Center"/>
+                <TextBox x:Name="name" Text="{Binding CourseName}" Grid.Row="0" Grid.Column="1" Margin="0,0,0,10"
+                         materialDesign:HintAssist.Hint="Введите название курса" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+                <TextBlock Text="Продолжительность:" Grid.Row="1" Grid.Column="0" Margin="0,0,10,5" VerticalAlignment="Center"/>
+                <TextBox x:Name="prod" Text="{Binding Duration}" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10"
+                         materialDesign:HintAssist.Hint="Введите продолжительность (в месяцах)" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+                <TextBlock Text="Описание:" Grid.Row="2" Grid.Column="0" Margin="0,0,10,5" VerticalAlignment="Top"/>
+                <TextBox x:Name="opisanie" Text="{Binding Description}" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10"
+                         AcceptsReturn="True" TextWrapping="Wrap" Height="100"
+                         materialDesign:HintAssist.Hint="Введите описание" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+                <!-- Save Button -->
+                <Button Content="Сохранить" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,0,0"
+                        Click="Button_Click"/>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Page>
