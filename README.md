@@ -36,7 +36,7 @@
 
 ### 1. Клонируй репозиторий
 ```bash
-git clone https://github.com/YourUsername/StudentPortal.git
+git clone https://github.com/TemhaN/StudentPortal.git
 cd StudentPortal
 ````
 
